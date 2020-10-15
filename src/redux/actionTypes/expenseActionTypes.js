@@ -1,0 +1,5 @@
+export const EXPENSE_DETAILS = "EXPENSE_DETAILS";
+export const CATEGORIES = "CATEGORIES";
+export const ADD_EXPENSE = "ADD_EXPENSE";
+export const ADD_CATEGORY = "ADD_CATEGORY";
+export const EXPENSE_LOADER = "EXPENSE_LOADER";
