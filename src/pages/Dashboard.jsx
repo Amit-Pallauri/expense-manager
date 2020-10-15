@@ -101,7 +101,7 @@ const Dashboard = () => {
                     ?
                     <>
                         <div className='dashboard-table'>
-                            <Table columns={columns} dataSource={data} pagination={{hideOnSinglePage: true, }} />
+                            <Table className="table" columns={columns} dataSource={data} pagination={{hideOnSinglePage: true, }} />
                         </div>
                         <div className="dashboard-btns">
                         {
@@ -207,12 +207,14 @@ const Dashboard = () => {
                                     }
                                 </select>
                                 <RangePicker
-                                    format="YYYY-MM-DD HH:mm"
+                                    format="YYYY-MM-DD"
                                     onChange={handleDateChange}
-                                    // onOk={onOk}
                                 />
                             </div>
-                            <Button type="primary" onClick={handleFilterSubmit}>Filter</Button>
+                            <div style={{ display : 'flex', justifyContent : 'space-around'}}>
+                                <Button type="primary" onClick={handleFilterSubmit}>Filter</Button>
+                                <Button style={{ color : "red" }} onClick={()=>dispatch(getDetails())}> X reset</Button>
+                            </div>
                         </div>     
                     </Modal> 
         </>
