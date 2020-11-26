@@ -20,16 +20,18 @@ const Dashboard = () => {
     const dispatch = useDispatch()
     const[M1visible, setVisibleM1] = useState(false);
     const[M2visible, setVisibleM2] = useState(false);
-    const[expense, setExpense] = useState({
+    const initialExpense = {
         amount: '',
         category : '',
         description : ''
-    })
-    const[filter, setFilter] = useState({
+    }
+    const initialFilter = {
         category : '',
         start_date : '',
         end_date : ''
-    })
+    }
+    const[expense, setExpense] = useState(initialExpense)
+    const[filter, setFilter] = useState(initialFilter)
     const[category, setCategory] = useState('')
     const { expenses, categories, loader } = useSelector(storeState => storeState.expenseState)
     
@@ -86,11 +88,13 @@ const Dashboard = () => {
     const handleFilterSubmit = e => {
         e.preventDefault();
         dispatch(getDetails(filter))
+        setFilter(initialFilter)
     }
 
     const handleExpenseSubmit = e => {
         e.preventDefault();
         dispatch(addExpense(expense))
+        setExpense(initialExpense)
     }
 
     return (
@@ -122,7 +126,13 @@ const Dashboard = () => {
                                     value={category}
                                     onChange={e => setCategory(e.target.value)}
                                 />
-                                <Button onClick={handleClick} type="primary">+ Category</Button>
+                                {
+                                    category == '' 
+                                    ?
+                                    <Button onClick={handleClick} type="primary" disabled>+ Category</Button>
+                                    :
+                                    <Button onClick={handleClick} type="primary">+ Category</Button>
+                                }
                                 <Button onClick={()=>{
                                     setVisibleM2(true) 
                                     dispatch(getCategories()) 
@@ -213,7 +223,10 @@ const Dashboard = () => {
                             </div>
                             <div style={{ display : 'flex', justifyContent : 'space-around'}}>
                                 <Button type="primary" onClick={handleFilterSubmit}>Filter</Button>
-                                <Button style={{ color : "red" }} onClick={()=>dispatch(getDetails())}> X reset</Button>
+                                <Button style={{ color : "red" }} onClick={() => {
+                                    dispatch(getDetails())
+                                    setFilter(initialFilter)
+                                }}> X reset</Button>
                             </div>
                         </div>     
                     </Modal> 

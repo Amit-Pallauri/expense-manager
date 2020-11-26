@@ -13,7 +13,7 @@ const RegisterPage = () => {
 	const history = useHistory()
 	const dispatch = useDispatch()
 	const loader = useSelector(storeState => storeState.userState.loader )
-	const [user, setUser] = useState({
+	const initialUser = {
 		user_name: '',
 		email: '',
 		password: '',
@@ -22,7 +22,8 @@ const RegisterPage = () => {
 			email: '',
 			password: '',
 		  }
-	})
+	}
+	const [user, setUser] = useState(initialUser)
 
 	const validEmailRegex = RegExp(
 		/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
