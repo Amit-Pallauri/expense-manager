@@ -1,89 +1,90 @@
-.dashboard-container{
-    display: flex;
-    justify-content: space-around;
+.dashboard-container {
+  display: flex;
+  justify-content: space-around;
 }
 
-.dashboard-table{
-    width: 70%;
-    height: 90vh;
-    margin: auto;
+.dashboard-table {
+  width: 70%;
+  height: 90vh;
+  margin: auto;
 }
 
-.dashboard-table .table{
-    position: relative;
-    top: 1%;
-    border: 1px solid rgba(119, 116, 116, 0.212);
+.dashboard-table .table {
+  position: relative;
+  top: 1%;
+  border: 1px solid rgba(119, 116, 116, 0.212);
 }
 
-
-.cols{
-    background: rgba(51, 4, 4, 0.432);
-    color: rgb(0, 0, 0);
+.cols {
+  background: rgba(51, 4, 4, 0.432);
+  color: rgb(0, 0, 0);
 }
 
-.dashboard-btns{
-   display: flex;
-   justify-content: space-evenly;
-   flex-direction: column;
-    width: 20%;
-    height: 90vh;
-    /* border: 1px solid black; */
+.dashboard-btns {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 20%;
+  height: 90vh;
+  /* border: 1px solid black; */
 }
 
-.dashboard-btns Button{
-    background: rgb(3, 85, 139);
-   width: 200px;
-   height: 50px;
+.dashboard-btns Button {
+  background: rgb(3, 85, 139);
+  width: 200px;
+  height: 50px;
 }
 
-.dashboard-btns Button, input {
-    position: relative;
-    top: 10%;
+.dashboard-btns Button,
+input {
+  position: relative;
+  top: 10%;
 }
 
-.filter-section, .add-expense-section{
-    display: flex;
-    flex-direction: column;
+.filter-section,
+.add-expense-section {
+  display: flex;
+  flex-direction: column;
 }
 
-.filter-section Button{
-    height: 40px;
-    width: 40%;
-    margin: auto;
-    margin-top: 20px;
+.filter-section Button {
+  height: 40px;
+  width: 40%;
+  margin: auto;
+  margin-top: 20px;
 }
 
-.dropdown-stylings{
-    padding: 10px 15px;
-    outline: none;
-    border: 1px solid rgba(68, 66, 66, 0.418)
+.dropdown-stylings {
+  padding: 10px 15px;
+  outline: none;
+  border: 1px solid rgba(68, 66, 66, 0.418);
 }
 
-.add-expense-section input[type='Number']{
-    width : 65%;
-    padding : 10px;
-    text-align : center;
-    outline: none;
-    border: 1px solid rgba(63, 60, 60, 0.685);
+.add-expense-section input[type="Number"] {
+  width: 65%;
+  padding: 10px;
+  text-align: center;
+  outline: none;
+  border: 1px solid rgba(63, 60, 60, 0.685);
 }
 
-
-.add-expense-section input[type='textarea']{
-    width : 98%;
-    margin: 20px auto;
-    height: 40%;
-    padding : 10px;
-    text-align : center;
-    outline: none;
-    border: 1px solid rgba(63, 60, 60, 0.685);
+.add-expense-section input[type="textarea"] {
+  width: 98%;
+  margin: 20px auto;
+  height: 40%;
+  padding: 10px;
+  text-align: center;
+  outline: none;
+  border: 1px solid rgba(63, 60, 60, 0.685);
 }
 
-.btns{
-    display: flex;
-    flex-direction: column;
-    height: 50%;
+.btns {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
 }
 
-.btns Button, input[type='text']{
-    margin: 10px;
+.btns Button,
+input[type="text"] {
+  margin: 10px;
 }
